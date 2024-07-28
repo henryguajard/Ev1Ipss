@@ -14,13 +14,12 @@ class ControllerCrearProy extends Controller
         // Validar la solicitud
         $validatedData = $request->validate([
             'nombre' => 'required|string|max:255',
-            'fecha_de_inicio' => 'required|date', 
+            'fecha_de_inicio' => 'required|date', // Cambia 'fecha de inicio' a 'fecha_de_inicio'
             'estado' => 'required|boolean', 
             'responsable' => 'required|string|max:255',
             'monto' => 'required|numeric',
         ]);
 
-        // Crear un nuevo proyecto
         $proyecto = CrearProyectos::create($validatedData);
 
         // Retornar respuesta

@@ -10,10 +10,10 @@ use App\Http\Controllers\api\ControllerEliminarProy;
 
 Route::get('/proyectos', [ControllerObtenerProy::class, 'index']);//obtener todos
 
-Route::get('/proyectos/{id}', [ControllerObtenerUno::class, 'show']);//obtener uno
+//Route::get('/proyectos/{id}', [ControllerObtenerUno::class, 'show']);//obtener uno
 
-Route::put('/proyectos/{id}', [ControllerActualizProy::class, 'update']);// modificar 
+//Route::put('/proyectos/{id}', [ControllerActualizProy::class, 'update']);// modificar 
 
-Route::post('/proyectos', [ControllerCrearProy::class, 'store']);// crear proyecto
 
-Route::delete('/proyectos/{id}', [ControllerEliminarProy::class, 'destroy']);//eliminar proyecto
+
+//Route::delete('/proyectos/{id}', [ControllerEliminarProy::class, 'destroy']);//eliminar proyecto

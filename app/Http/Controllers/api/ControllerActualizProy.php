@@ -1,15 +1,28 @@
 <?php
 
 namespace App\Http\Controllers\api;
-
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\CrearProyectos;
-use Illuminate\Http\Request;
 
 class ControllerActualizProy extends Controller
 {
-    //
-    // Método para actualizar un proyecto por ID
+    
+    public function edit($id)
+    {
+        // Buscar el proyecto por ID
+        $proyecto = CrearProyectos::find($id);
+
+        
+        if (!$proyecto) {
+            return redirect('/proyectos')->with('error', 'Proyecto no encontrado');
+        }
+
+        
+        return view('actualizProyectId', compact('proyecto'));
+    }
+
+    
     public function update(Request $request, $id)
     {
         // Validar la solicitud
@@ -35,9 +48,6 @@ class ControllerActualizProy extends Controller
         $proyecto->update($validatedData);
 
         // Retornar respuesta
-        return response()->json([
-            'message' => 'Proyecto actualizado exitosamente',
-            'data' => $proyecto
-        ], 200);
+        return redirect('/proyectos')->with('success', 'Proyecto actualizado exitosamente');
     }
 }
