@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todos los Proyectos</title>
-</head>
-<body>
-    <h1>Lista de Proyectos</h1>
+@extends('layouts.app')
 
-    <h2>Valor de la UF</h2>
+@section('title', 'Todos los Proyectos')
+
+@section('content')
+    <h1 class="mb-4">Lista de Proyectos</h1>
+    <h2 class="mb-3">Valor de la UF</h2>
     @if(isset($ufValue))
         <p>El valor de la UF hoy es: {{ $ufValue }}</p>
     @else
@@ -18,7 +14,7 @@
     @if ($proyectos->isEmpty())
         <p>No hay proyectos disponibles.</p>
     @else
-        <table border="1">
+        <table class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -43,5 +39,4 @@
             </tbody>
         </table>
     @endif
-</body>
-</html>
+@endsection
