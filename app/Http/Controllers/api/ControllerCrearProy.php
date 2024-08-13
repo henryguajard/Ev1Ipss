@@ -23,9 +23,12 @@ class ControllerCrearProy extends Controller
         $proyecto = CrearProyectos::create($validatedData);
 
         // Retornar respuesta
-        return response()->json([
-            'message' => 'Proyecto creado exitosamente',
-            'data' => $proyecto
-        ], 201);
+       // return response()->json([
+          //  'message' => 'Proyecto creado exitosamente',
+          //  'data' => $proyecto
+       // ], 201);
+
+        // Redirigir a la lista de proyectos con un mensaje de éxito
+        return redirect('/proyectos')->with('success', 'Proyecto creado exitosamente');
     }
 }

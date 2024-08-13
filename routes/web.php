@@ -6,6 +6,7 @@ use App\Http\Controllers\api\ControllerObtenerProy;
 use App\Http\Controllers\api\ControllerObtenerUno;
 use App\Http\Controllers\api\ControllerEliminarProy;
 use App\Http\Controllers\api\ControllerActualizProy;
+
 // Ruta para mostrar el formulario de creación de proyecto
 Route::get('/crearProyect', function () {
     return view('crearProyect');

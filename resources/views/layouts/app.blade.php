@@ -12,21 +12,24 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"> <!-- Si tienes CSS personalizado -->
 </head>
 <body>
-    <!-- Barra de navegación común -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Mi Aplicación</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/proyectos">Proyectos</a>
-                </li>
-                <!-- Agrega más enlaces según tus necesidades -->
-            </ul>
-        </div>
-    </nav>
+   <!-- Barra de navegación común -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Mi Aplicación</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/proyectos">Proyectos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/crearProyect">Crear proyecto</a>
+            </li>
+           
+        </ul>
+    </div>
+</nav>
     
     <div class="container mt-4">
         @yield('content') <!-- Contenido específico de cada página -->
@@ -37,7 +40,21 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
-    <!-- Incluir JavaScript adicional -->
-    <script src="{{ asset('js/app.js') }}"></script> <!-- Si tienes JavaScript personalizado -->
+    <!-- Script para cerrar automáticamente el mensaje de éxito -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Esperar 5 segundos y luego ocultar el mensaje de éxito
+            setTimeout(function() {
+                var alertElement = document.querySelector('.alert');
+                if (alertElement) {
+                    // Usar Bootstrap para ocultar el alert
+                    alertElement.classList.remove('show');
+                    alertElement.classList.add('fade');
+                }
+            }, 5000); // 5000 milisegundos = 5 segundos
+        });
+    </script>
+    
+    
 </body>
 </html>

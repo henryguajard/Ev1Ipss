@@ -24,5 +24,3 @@
         <a href="{{ url('/proyectos') }}" class="btn btn-secondary">Volver a la lista de proyectos</a>
     @endif
 @endsection
-// corregir al no encontrar un id por proyecto no aparece 'el proyecto no existe'
-// solo me redirige a los proyectos

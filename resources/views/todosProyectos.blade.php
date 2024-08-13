@@ -40,3 +40,23 @@
         </table>
     @endif
 @endsection
+
+@section('content')
+    <h1 class="mb-4">Lista de Proyectos</h1>
+
+    @foreach ($proyectos as $proyecto)
+        <div class="project-item mb-3">
+            <h2>{{ $proyecto->nombre }}</h2>
+            <!-- Enlace para confirmar la eliminación -->
+            <a href="{{ url('/eliminarProyectId/' . $proyecto->id . '/confirmDelete') }}" class="btn btn-warning">Eliminar Proyecto</a>
+        </div>
+    @endforeach
+@endsection
+
+@if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
